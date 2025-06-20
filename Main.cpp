@@ -15,8 +15,11 @@
 #include "debug_text.h"
 #include <sstream>
 #include "system_timer.h"
-
+#include "KoKo.h"
 //#include "polygon.h"
+
+const constexpr int SCREEN_WIDTH = 1920;
+const constexpr int SCREEN_HEIGHT = 1080;
 
 int APIENTRY WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,
 	_In_ LPSTR IpCmdline, _In_ int nCmdShow)
@@ -34,20 +37,25 @@ int APIENTRY WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,
 	SpriteAni_Initialize();
 
 	hal::DebugText dt(Direct3D_GetDevice(), Direct3D_GetContext(),
-		L"consolab_ascii_512.png",
+		L"Resource/consolab_ascii_512.png",
 		Direct3D_GetBackBufferWidth(), Direct3D_GetBackBufferHeight(),
-		0.f, 0.f,
-		0, 0,
-		0.f, 0.f);
+		0.f, 0.f, 0, 0, 0.f, 0.f);
 
 	// Input Texture File
-	int TexID_Knight = Texture_Load(L"knight_more_new.png");
-	int TexID_Konbini = Texture_Load(L"konbini.png");
-	int TexID_KoKo = Texture_Load(L"kokosozai.png");
+	int TexID_Ground = Texture_Load(L"Resource/Texture/pixel_ground.jpg");
+	int TexID_Run01 = Texture_Load(L"Resource/Texture/runningman000.png");
+	int TexID_Run02 = Texture_Load(L"Resource/Texture/runningman001.png");
 
-	int aid_rw = SpriteAni_Get_Pattern_Info(TexID_KoKo, 13, { 32, 32 }, { 32 * 0, 32 * 0 }, true); // Loop Animation
-	int aid_sm = SpriteAni_Get_Pattern_Info(TexID_KoKo, 6,  { 32, 32 }, { 32 * 0, 32 * 2 }, true); // Loop Animation
-	int aid_to = SpriteAni_Get_Pattern_Info(TexID_KoKo, 4, { 32, 32 }, { 32 * 2, 32 * 5 }, false); // Do Not Loop Animation
+	// Make Texture Animation Pattern
+	// (Pattern ID, Pattern Play Time, Pattern Size (X, Y), Start Position (W, H), Loop Animation (False = NO / True = YES)
+	int AID_Run01 = SpriteAni_Get_Pattern_Info(TexID_Run01,  8, 8, 0.2, { 100, 200 }, { 100 * 0, 200 * 0 }, true);
+	int AID_Run02 = SpriteAni_Get_Pattern_Info(TexID_Run02,  10, 5, 0.2, { 140, 200 }, { 140 * 0, 200 * 0 }, true);
+
+	// Create Animation Player
+	int PID_08 = SpriteAni_CreatePlayer(AID_Run01);
+	int PID_09 = SpriteAni_CreatePlayer(AID_Run02);
+
+	KoKo_Initialize();
 
 	ShowWindow(hWnd, nCmdShow);
 	UpdateWindow(hWnd);
@@ -99,13 +107,16 @@ int APIENTRY WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,
 				Direct3D_Clear();
 	
 				Sprite_Begin();
-				//Sprite_Draw(TexID_Konbini, 32.0f, 32.0f, { 1.f, 1.f, 1.f, 1.f });
-				Sprite_Draw(TexID_Knight, .0f, .0f, 1024.f * .5f, 1536.f * .5f);
+				
+				// Show Texture (What, Where, Size)
+				Sprite_Draw(TexID_Ground, .0f, .0f, (float)SCREEN_WIDTH, (float)SCREEN_HEIGHT);
 	
+				// Show Texture Animation (What, Where, Size)
+				KoKo_Draw();
 
-				SpriteAni_Draw(0, 512.f, 64.f, 256.f, 256.f);
-				SpriteAni_Draw(1, 1024.f, 64.f, 256.f, 256.f);
-				SpriteAni_Draw(2, 1024.f, 512.f, 256.f, 256.f);
+				//running
+				SpriteAni_Draw(PID_08, 1300.f, 450.f, 100.f * 2, 200.f * 2);
+				SpriteAni_Draw(PID_09,  900.f, 450.f, 140.f * 2, 200.f * 2);
 
 				// Show FPS
 #if defined(DEBUG) || defined(_DEBUG)

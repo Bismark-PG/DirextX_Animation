@@ -260,10 +260,10 @@ void Sprite_Draw(int Tex_ID, float dx, float dy, float dw, float dh,
 	// 頂点情報を書き込み
 
 	// 画面の左上から右下に向かう線分を描画する
-	v[0].position = { dx,		dy,      0.0f };
-	v[1].position = { dx + dw,	dy,      0.0f };
-	v[2].position = { dx,		dy + dh, 0.0f };
-	v[3].position = { dx + dw,	dy + dh, 0.0f };
+	v[0].position = { dx,		dy,      0.0f }; // 左上
+	v[1].position = { dx + dw,	dy,      0.0f }; // 右上
+	v[2].position = { dx,		dy + dh, 0.0f }; // 左下
+	v[3].position = { dx + dw,	dy + dh, 0.0f }; // 右下
 
 	v[0].color = color;
 	v[1].color = color;
@@ -275,9 +275,9 @@ void Sprite_Draw(int Tex_ID, float dx, float dy, float dw, float dh,
 	float th = (float)Texture_Height(Tex_ID);
 
 	// Set UV Size
-	float U0 = px		 / tw;
-	float U1 = (px + pw) / th;
-	float V0 = py		 / tw;
+	float U0 = px		 / tw; 
+	float U1 = (px + pw) / tw;
+	float V0 = py		 / th;
 	float V1 = (py + ph) / th;
 
 	// Cut Texture With Using UV Tool

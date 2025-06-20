@@ -23,6 +23,7 @@
     <ClCompile Include="debug_text.cpp" />
     <ClCompile Include="direct3d.cpp" />
     <ClCompile Include="Game_Window.cpp" />
+    <ClCompile Include="KoKo_Draw.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="polygon.cpp" />
     <ClCompile Include="shader.cpp" />
@@ -38,6 +39,7 @@
     <ClInclude Include="direct3d.h" />
     <ClInclude Include="DirectXTex.h" />
     <ClInclude Include="Game_Window.h" />
+    <ClInclude Include="KoKo.h" />
     <ClInclude Include="polygon.h" />
     <ClInclude Include="shader.h" />
     <ClInclude Include="Sprite.h" />
@@ -173,7 +175,7 @@
       <AdditionalDependencies>d3d11.lib;DirectXTex_Debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /D /Y "$(TargetDir)*.cso" "$(ProjectDir)"</Command>
+      <Command>xcopy /D /Y "$(TargetDir)*.cso" "$(ProjectDir)Resource/Shader"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -195,7 +197,7 @@
       <AdditionalDependencies>d3d11.lib;DirectXTex_Release.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /D /Y "$(TargetDir)*.cso" "$(ProjectDir)"</Command>
+      <Command>xcopy /D /Y "$(TargetDir)*.cso" "$(ProjectDir)Resource/Shader"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

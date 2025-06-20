@@ -9,6 +9,9 @@
 static constexpr char WINDOW_CLASS[] = "GameWindow";
 static constexpr char TITLE[] = "Show Windows";
 
+const constexpr int SCREEN_WIDTH = 1920;
+const constexpr int SCREEN_HEIGHT = 1080;
+
 LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
 HWND GameWindowCreate(HINSTANCE hInstance)
@@ -27,8 +30,8 @@ HWND GameWindowCreate(HINSTANCE hInstance)
 
 	RegisterClassEx(&wcex);
 
-	const constexpr int SCREEN_WIDTH = 1600;
-	const constexpr int SCREEN_HEIGHT = 900;
+	//const constexpr int SCREEN_WIDTH = 1600;
+	//const constexpr int SCREEN_HEIGHT = 900;
 
 	RECT WindowRect = { 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT };
 
