@@ -343,53 +343,6 @@ void Sprite_Draw(float dx, float dy, float dw, float dh)
 	v[2].UV = { 0.0f, 1.0f };
 	v[3].UV = { 1.0f, 1.0f };
 
-	// Make 5 Square
-	/*v[4].position = {SCREEN_WIDTH * 0.1f, SCREEN_HEIGHT * 0.1f, 0.0f};
-	v[5].position = { SCREEN_WIDTH * 0.3f, SCREEN_HEIGHT * 0.1f, 0.0f };
-	v[6].position = { SCREEN_WIDTH * 0.1f, SCREEN_HEIGHT * 0.3f, 0.0f };
-	v[7].position = { SCREEN_WIDTH * 0.3f, SCREEN_HEIGHT * 0.3f, 0.0f };
-
-	v[4].color = { 1.0f, 1.0f, 1.0f, 1.0f };
-	v[5].color = { 1.0f, 1.0f, 1.0f, 1.0f };
-	v[6].color = { 1.0f, 1.0f, 1.0f, 1.0f };
-	v[7].color = { 1.0f, 1.0f, 1.0f, 1.0f };
-
-	v[8].position = { SCREEN_WIDTH * 0.4f, SCREEN_HEIGHT * 0.3f, 0.0f };
-
-	v[9].position = { SCREEN_WIDTH * 0.4f, SCREEN_HEIGHT * 0.4f, 0.0f };
-	v[10].position = { SCREEN_WIDTH * 0.4f, SCREEN_HEIGHT * 0.6f, 0.0f };
-	v[11].position = { SCREEN_WIDTH * 0.6f, SCREEN_HEIGHT * 0.4f, 0.0f };
-	v[12].position = { SCREEN_WIDTH * 0.6f, SCREEN_HEIGHT * 0.6f, 0.0f };
-
-	v[9].color = { 1.0f, 1.0f, 1.0f, 1.0f };
-	v[10].color = { 1.0f, 1.0f, 1.0f, 1.0f };
-	v[11].color = { 1.0f, 1.0f, 1.0f, 1.0f };
-	v[12].color = { 1.0f, 1.0f, 1.0f, 1.0f };
-
-	v[13].position = { SCREEN_WIDTH * 0.3f, SCREEN_HEIGHT * 0.6f, 0.0f };
-
-	v[14].position = { SCREEN_WIDTH * 0.3f, SCREEN_HEIGHT * 0.7f, 0.0f };
-	v[15].position = { SCREEN_WIDTH * 0.3f, SCREEN_HEIGHT * 0.9f, 0.0f };
-	v[16].position = { SCREEN_WIDTH * 0.1f, SCREEN_HEIGHT * 0.7f, 0.0f };
-	v[17].position = { SCREEN_WIDTH * 0.1f, SCREEN_HEIGHT * 0.9f, 0.0f };
-
-	v[14].color = { 1.0f, 1.0f, 1.0f, 1.0f };
-	v[15].color = { 1.0f, 1.0f, 1.0f, 1.0f };
-	v[16].color = { 1.0f, 1.0f, 1.0f, 1.0f };
-	v[17].color = { 1.0f, 1.0f, 1.0f, 1.0f };
-
-	v[18].position = { SCREEN_WIDTH * 0.3f, SCREEN_HEIGHT * 0.3f, 0.0f };
-
-	v[19].position = { SCREEN_WIDTH * 0.7f, SCREEN_HEIGHT * 0.3f, 0.0f };
-	v[20].position = { SCREEN_WIDTH * 0.9f, SCREEN_HEIGHT * 0.3f, 0.0f };
-	v[21].position = { SCREEN_WIDTH * 0.7f, SCREEN_HEIGHT * 0.1f, 0.0f };
-	v[22].position = { SCREEN_WIDTH * 0.9f, SCREEN_HEIGHT * 0.1f, 0.0f };
-
-	v[19].color = { 1.0f, 1.0f, 1.0f, 1.0f };
-	v[20].color = { 1.0f, 1.0f, 1.0f, 1.0f };
-	v[21].color = { 1.0f, 1.0f, 1.0f, 1.0f };
-	v[22].color = { 1.0f, 1.0f, 1.0f, 1.0f };*/
-
 	// 頂点バッファのロックを解除
 	g_pContext->Unmap(g_pVertexBuffer, 0);
 

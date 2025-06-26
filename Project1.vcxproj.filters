@@ -17,33 +17,45 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
+    <Filter Include="ソース ファイル\TextureCPP">
+      <UniqueIdentifier>{878f16fb-0e04-47a1-a2c5-bedf4d1c0567}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\TextureH">
+      <UniqueIdentifier>{1f2f3783-6ab0-438f-baa6-934145d23159}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\DirectX">
+      <UniqueIdentifier>{09817fc4-efb1-4e2a-9dca-540b7c146781}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\DirectX">
+      <UniqueIdentifier>{d1c6ea99-2417-4828-a58b-271e4fd10ecc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Setting">
+      <UniqueIdentifier>{688eadaf-edf3-4f06-a4d7-6beb4522a21c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Setting">
+      <UniqueIdentifier>{2d23f29a-a49a-45c8-be74-2954baf257c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Debug">
+      <UniqueIdentifier>{622f53fa-7885-4647-8d78-3153f1730a2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Debug">
+      <UniqueIdentifier>{80f94ccb-bdc5-4294-8684-ddddb429224a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Draw">
+      <UniqueIdentifier>{d62ac452-38be-4fe1-b3f3-d1a4fbe21cb6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Draw">
+      <UniqueIdentifier>{9118fbfe-f4ff-428b-8ddb-9235577d7802}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="リソース ファイル\Texture">
+      <UniqueIdentifier>{2cc96703-c483-4598-a365-54c169798d69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="リソース ファイル\DirectX">
+      <UniqueIdentifier>{f4e16cb5-1187-4f88-b835-06c430b88d0b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Game_Window.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="direct3d.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="debug_ostream.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="polygon.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="shader.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Sprite.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Texture.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Sprite_Animation.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="system_timer.cpp">
@@ -52,52 +64,94 @@
     <ClCompile Include="debug_text.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="WICTextureLoader11.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="Background.cpp">
+      <Filter>ソース ファイル\TextureCPP</Filter>
+    </ClCompile>
+    <ClCompile Include="Run_Draw.cpp">
+      <Filter>ソース ファイル\TextureCPP</Filter>
     </ClCompile>
     <ClCompile Include="KoKo_Draw.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\TextureCPP</Filter>
+    </ClCompile>
+    <ClCompile Include="direct3d.cpp">
+      <Filter>ソース ファイル\DirectX</Filter>
+    </ClCompile>
+    <ClCompile Include="Game_Window.cpp">
+      <Filter>ソース ファイル\Setting</Filter>
+    </ClCompile>
+    <ClCompile Include="WICTextureLoader11.cpp">
+      <Filter>ソース ファイル\DirectX</Filter>
+    </ClCompile>
+    <ClCompile Include="debug_ostream.cpp">
+      <Filter>ソース ファイル\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="shader.cpp">
+      <Filter>ソース ファイル\Setting</Filter>
+    </ClCompile>
+    <ClCompile Include="polygon.cpp">
+      <Filter>ソース ファイル\Draw</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>ソース ファイル\Draw</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite_Animation.cpp">
+      <Filter>ソース ファイル\Draw</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>ソース ファイル\Draw</Filter>
+    </ClCompile>
+    <ClCompile Include="HAL.cpp">
+      <Filter>ソース ファイル\TextureCPP</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="debug_ostream.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Game_Window.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="direct3d.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="polygon.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="shader.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="DirectXTex.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Sprite.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Texture.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Sprite_Animation.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="system_timer.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="WICTextureLoader11.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="debug_text.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="KoKo.h">
-      <Filter>ヘッダー ファイル</Filter>
+      <Filter>ヘッダー ファイル\TextureH</Filter>
+    </ClInclude>
+    <ClInclude Include="Run.h">
+      <Filter>ヘッダー ファイル\TextureH</Filter>
+    </ClInclude>
+    <ClInclude Include="Background.h">
+      <Filter>ヘッダー ファイル\TextureH</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectXTex.h">
+      <Filter>ヘッダー ファイル\DirectX</Filter>
+    </ClInclude>
+    <ClInclude Include="direct3d.h">
+      <Filter>ヘッダー ファイル\DirectX</Filter>
+    </ClInclude>
+    <ClInclude Include="Game_Window.h">
+      <Filter>ヘッダー ファイル\Setting</Filter>
+    </ClInclude>
+    <ClInclude Include="WICTextureLoader11.h">
+      <Filter>ヘッダー ファイル\DirectX</Filter>
+    </ClInclude>
+    <ClInclude Include="debug_ostream.h">
+      <Filter>ヘッダー ファイル\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="shader.h">
+      <Filter>ヘッダー ファイル\Setting</Filter>
+    </ClInclude>
+    <ClInclude Include="polygon.h">
+      <Filter>ヘッダー ファイル\Draw</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>ヘッダー ファイル\Draw</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite_Animation.h">
+      <Filter>ヘッダー ファイル\Draw</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>ヘッダー ファイル\Draw</Filter>
+    </ClInclude>
+    <ClInclude Include="HAL.h">
+      <Filter>ヘッダー ファイル\TextureH</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -109,48 +163,69 @@
     </FxCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="konbini.png">
-      <Filter>リソース ファイル</Filter>
-    </Image>
-    <Image Include="knight.png">
-      <Filter>リソース ファイル</Filter>
-    </Image>
-    <Image Include="knight_more_new.png">
-      <Filter>リソース ファイル</Filter>
-    </Image>
     <Image Include="knight_new.png">
-      <Filter>リソース ファイル</Filter>
+      <Filter>リソース ファイル\Texture</Filter>
     </Image>
-    <Image Include="kokosozai.png">
-      <Filter>リソース ファイル</Filter>
+    <Image Include="Resource\Texture\knight.png">
+      <Filter>リソース ファイル\Texture</Filter>
+    </Image>
+    <Image Include="Resource\Texture\knight_more_new.png">
+      <Filter>リソース ファイル\Texture</Filter>
+    </Image>
+    <Image Include="Resource\Texture\kokosozai.png">
+      <Filter>リソース ファイル\Texture</Filter>
+    </Image>
+    <Image Include="Resource\Texture\konbini.png">
+      <Filter>リソース ファイル\Texture</Filter>
+    </Image>
+    <Image Include="Resource\Texture\pixel_ground.jpg">
+      <Filter>リソース ファイル\Texture</Filter>
+    </Image>
+    <Image Include="Resource\Texture\runningman000.png">
+      <Filter>リソース ファイル\Texture</Filter>
+    </Image>
+    <Image Include="Resource\Texture\runningman001.png">
+      <Filter>リソース ファイル\Texture</Filter>
+    </Image>
+    <Image Include="Resource\Texture\runningman002.png">
+      <Filter>リソース ファイル\Texture</Filter>
+    </Image>
+    <Image Include="Resource\Texture\runningman003.png">
+      <Filter>リソース ファイル\Texture</Filter>
+    </Image>
+    <Image Include="Resource\Texture\HAL.jpg">
+      <Filter>リソース ファイル\Texture</Filter>
     </Image>
     <Image Include="consolab_ascii_512.png">
-      <Filter>リソース ファイル</Filter>
+      <Filter>リソース ファイル\Texture</Filter>
+    </Image>
+    <Image Include="konbini.png">
+      <Filter>リソース ファイル\Texture</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <None Include="DirectXTex.inl">
-      <Filter>ヘッダー ファイル</Filter>
-    </None>
-    <None Include="DirectXTex.pdb">
-      <Filter>リソース ファイル</Filter>
-    </None>
-    <None Include="DirectXTex_Debug.pdb">
-      <Filter>リソース ファイル</Filter>
-    </None>
-    <None Include="DirectXTex_Release.pdb">
-      <Filter>リソース ファイル</Filter>
-    </None>
     <None Include="ascii_texture_generator.py">
       <Filter>リソース ファイル</Filter>
     </None>
+    <None Include="DirectXTex.inl">
+      <Filter>ヘッダー ファイル\DirectX</Filter>
+    </None>
+    <None Include="DirectXTex.pdb">
+      <Filter>リソース ファイル\DirectX</Filter>
+    </None>
+    <None Include="DirectXTex_Debug.pdb">
+      <Filter>リソース ファイル\DirectX</Filter>
+    </None>
+    <None Include="DirectXTex_Release.pdb">
+      <Filter>リソース ファイル\DirectX</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Library Include="DirectXTex_Release.lib">
-      <Filter>リソース ファイル</Filter>
-    </Library>
     <Library Include="DirectXTex_Debug.lib">
-      <Filter>リソース ファイル</Filter>
+      <Filter>リソース ファイル\DirectX</Filter>
+    </Library>
+    <Library Include="DirectXTex_Release.lib">
+      <Filter>リソース ファイル\DirectX</Filter>
     </Library>
   </ItemGroup>
 </Project>

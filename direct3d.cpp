@@ -50,8 +50,8 @@ bool Direct3D_Initialize(HWND hWnd)
 	// DISCARD or SEQUENTIAL>> Normal
 	// Use FILP >> Skip Adaptive V-Sync
 	// IF Want to Benchmark or Test Something Else etc...
-    swap_chain_desc.SwapEffect = DXGI_SWAP_EFFECT_FLIP_SEQUENTIAL;
-    //swap_chain_desc.SwapEffect = DXGI_SWAP_EFFECT_SEQUENTIAL;
+    //swap_chain_desc.SwapEffect = DXGI_SWAP_EFFECT_FLIP_SEQUENTIAL;
+    swap_chain_desc.SwapEffect = DXGI_SWAP_EFFECT_SEQUENTIAL;
     swap_chain_desc.OutputWindow = hWnd;
 
 	/*
@@ -167,7 +167,7 @@ void Direct3D_Finalize()
 void Direct3D_Clear()
 {
 	//color change
-	float clear_color[4] = { 0.2f, 0.4f, 0.2f, 1.0f };
+	float clear_color[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
 	g_pDeviceContext->ClearRenderTargetView(g_pRenderTargetView, clear_color);
 	g_pDeviceContext->ClearDepthStencilView(g_pDepthStencilView, D3D11_CLEAR_DEPTH, 1.0f, 0);
 	

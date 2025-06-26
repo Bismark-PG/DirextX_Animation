@@ -16,10 +16,14 @@
 #include <sstream>
 #include "system_timer.h"
 #include "KoKo.h"
-//#include "polygon.h"
+#include "Run.h"
+#include "Background.h"
+#include "HAL.h"
 
-const constexpr int SCREEN_WIDTH = 1920;
-const constexpr int SCREEN_HEIGHT = 1080;
+int Game_State = 0;
+//Hal, Run, Ground State
+int H_State = -1, R_State = -1, G_State = -1;
+int B_State = -1; // Blur State
 
 int APIENTRY WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,
 	_In_ LPSTR IpCmdline, _In_ int nCmdShow)
@@ -36,26 +40,17 @@ int APIENTRY WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,
 	Sprite_Initialize(Direct3D_GetDevice(), Direct3D_GetContext());
 	SpriteAni_Initialize();
 
+	int HAL = Texture_Load(L"Resource/Texture/HAL.jpg");
+
 	hal::DebugText dt(Direct3D_GetDevice(), Direct3D_GetContext(),
 		L"Resource/consolab_ascii_512.png",
 		Direct3D_GetBackBufferWidth(), Direct3D_GetBackBufferHeight(),
 		0.f, 0.f, 0, 0, 0.f, 0.f);
 
-	// Input Texture File
-	int TexID_Ground = Texture_Load(L"Resource/Texture/pixel_ground.jpg");
-	int TexID_Run01 = Texture_Load(L"Resource/Texture/runningman000.png");
-	int TexID_Run02 = Texture_Load(L"Resource/Texture/runningman001.png");
-
-	// Make Texture Animation Pattern
-	// (Pattern ID, Pattern Play Time, Pattern Size (X, Y), Start Position (W, H), Loop Animation (False = NO / True = YES)
-	int AID_Run01 = SpriteAni_Get_Pattern_Info(TexID_Run01,  8, 8, 0.2, { 100, 200 }, { 100 * 0, 200 * 0 }, true);
-	int AID_Run02 = SpriteAni_Get_Pattern_Info(TexID_Run02,  10, 5, 0.2, { 140, 200 }, { 140 * 0, 200 * 0 }, true);
-
-	// Create Animation Player
-	int PID_08 = SpriteAni_CreatePlayer(AID_Run01);
-	int PID_09 = SpriteAni_CreatePlayer(AID_Run02);
-
-	KoKo_Initialize();
+	// Initialize Game
+	HAL_Initialize();
+	Ground_Initialize();
+	Run_Initialize();
 
 	ShowWindow(hWnd, nCmdShow);
 	UpdateWindow(hWnd);
@@ -69,7 +64,6 @@ int APIENTRY WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,
 
 	// Make Game Loop & Message Loop
 	MSG msg;
-
 	do
 	{
 		if (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
@@ -77,7 +71,7 @@ int APIENTRY WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,
 			TranslateMessage(&msg);
 			DispatchMessage(&msg);
 		}
-		
+
 		// Set Game
 		else
 		{
@@ -102,21 +96,44 @@ int APIENTRY WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,
 
 				// Update Game Texture
 				SpriteAni_Update(Elapsed_Time);
-	
+
 				// Draw Texture
 				Direct3D_Clear();
-	
 				Sprite_Begin();
-				
-				// Show Texture (What, Where, Size)
-				Sprite_Draw(TexID_Ground, .0f, .0f, (float)SCREEN_WIDTH, (float)SCREEN_HEIGHT);
-	
-				// Show Texture Animation (What, Where, Size)
-				KoKo_Draw();
 
-				//running
-				SpriteAni_Draw(PID_08, 1300.f, 450.f, 100.f * 2, 200.f * 2);
-				SpriteAni_Draw(PID_09,  900.f, 450.f, 140.f * 2, 200.f * 2);
+				White_Draw();
+
+				switch (Game_State)
+				{
+				case 0:
+					H_State = HAL_Blur();
+					if (H_State == 1 && G_State == 1 && R_State == 2)
+						B_State = 1;
+
+					if (B_State == 1)
+						Ground_Blur();
+					else
+					{
+						if (H_State == 1) // If Blur is Complete
+						{
+							R_State = Run_To_Middle_Draw();
+						}
+						if (H_State == 1 && R_State == 1) // If Run is Complete
+						{
+							G_State = Ground_Draw();
+							HAL_Move();
+
+							if (G_State == 0)
+								Run_To_Middle_Draw();
+							else if (G_State == 1)
+								R_State = Run_To_Left();
+						}
+					}
+					break;
+				case 1:
+					break;
+				}
+				
 
 				// Show FPS
 #if defined(DEBUG) || defined(_DEBUG)
@@ -131,10 +148,10 @@ int APIENTRY WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,
 				Direct3D_Present();
 
 				Frame_Count++;
-			}	
+			}
 		}
 	} while (msg.message != WM_QUIT);
-	
+
 	// Read End Initialize Function
 	SpriteAni_Finalize();
 	Sprite_Finalize();

@@ -2,5 +2,6 @@
 #include "Sprite.h"
 #include "Texture.h"
 
-void KoKo_Initialize();
-void KoKo_Draw();
+void HAL_Initialize();
+int HAL_Blur();
+void HAL_Move();

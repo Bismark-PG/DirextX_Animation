@@ -19,13 +19,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Background.cpp" />
     <ClCompile Include="debug_ostream.cpp" />
     <ClCompile Include="debug_text.cpp" />
     <ClCompile Include="direct3d.cpp" />
     <ClCompile Include="Game_Window.cpp" />
+    <ClCompile Include="HAL.cpp" />
     <ClCompile Include="KoKo_Draw.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="polygon.cpp" />
+    <ClCompile Include="Run_Draw.cpp" />
     <ClCompile Include="shader.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="Sprite_Animation.cpp" />
@@ -34,13 +37,16 @@
     <ClCompile Include="WICTextureLoader11.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Background.h" />
     <ClInclude Include="debug_ostream.h" />
     <ClInclude Include="debug_text.h" />
     <ClInclude Include="direct3d.h" />
     <ClInclude Include="DirectXTex.h" />
     <ClInclude Include="Game_Window.h" />
+    <ClInclude Include="HAL.h" />
     <ClInclude Include="KoKo.h" />
     <ClInclude Include="polygon.h" />
+    <ClInclude Include="Run.h" />
     <ClInclude Include="shader.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="Sprite_Animation.h" />
@@ -64,11 +70,18 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="consolab_ascii_512.png" />
-    <Image Include="knight.png" />
-    <Image Include="knight_more_new.png" />
     <Image Include="knight_new.png" />
-    <Image Include="kokosozai.png" />
     <Image Include="konbini.png" />
+    <Image Include="Resource\Texture\HAL.jpg" />
+    <Image Include="Resource\Texture\knight.png" />
+    <Image Include="Resource\Texture\knight_more_new.png" />
+    <Image Include="Resource\Texture\kokosozai.png" />
+    <Image Include="Resource\Texture\konbini.png" />
+    <Image Include="Resource\Texture\pixel_ground.jpg" />
+    <Image Include="Resource\Texture\runningman000.png" />
+    <Image Include="Resource\Texture\runningman001.png" />
+    <Image Include="Resource\Texture\runningman002.png" />
+    <Image Include="Resource\Texture\runningman003.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ascii_texture_generator.py" />

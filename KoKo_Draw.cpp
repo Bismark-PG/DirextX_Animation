@@ -22,6 +22,7 @@ int PID_07;
 void KoKo_Initialize()
 {
 	// Input Texture File
+	// int name = Texture_Load(L"Texture address");
 	TexID_KoKo = Texture_Load(L"Resource/Texture/kokosozai.png");
 
 	// Make Texture Animation Pattern
