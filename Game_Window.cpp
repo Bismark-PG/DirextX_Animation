@@ -6,8 +6,8 @@
 #include "Game_Window.h"
 #include <algorithm>
 
-static constexpr char WINDOW_CLASS[] = "GameWindow";
-static constexpr char TITLE[] = "Show Windows";
+static constexpr wchar_t  WINDOW_CLASS[] = L"GameWindow";
+static constexpr wchar_t  TITLE[] = L"Show Windows";
 
 const constexpr int SCREEN_WIDTH = 1920;
 const constexpr int SCREEN_HEIGHT = 1080;
@@ -75,7 +75,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM IParam)
 		}
 		break;
 	case WM_CLOSE:
-		if (MessageBox(hWnd, "WARNING.", "Really?", MB_OKCANCEL) == IDOK)
+		if (MessageBox(hWnd, L"WARNING.", L"Really?", MB_OKCANCEL) == IDOK)
 			DestroyWindow(hWnd);
 		break;
 	case WM_DESTROY:

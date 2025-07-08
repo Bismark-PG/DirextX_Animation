@@ -89,7 +89,7 @@ void SpriteAni_Update(double elapsed_time)
 	}
 }
 
-void SpriteAni_Draw(int PlayID, float dx, float dy, float dw, float dh)
+void SpriteAni_Draw(int PlayID, float dx, float dy, float dw, float dh ,float angle)
 {
 	int Ani_Pattern_ID = g_AniPlay[PlayID].PatternID;
 	int Ani_Pattern_Num = g_AniPlay[PlayID].PatternNUM;
@@ -107,7 +107,7 @@ void SpriteAni_Draw(int PlayID, float dx, float dy, float dw, float dh)
 		
 		pAniPatternData->PatternSize.x,
 		pAniPatternData->PatternSize.y,
-		{ 1.0f, 1.0f, 1.0f, 1.0f });
+		angle, { 1.0f, 1.0f, 1.0f, 1.0f });
 }
 
 // Read Texture And Make Texture Info

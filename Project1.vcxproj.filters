@@ -70,9 +70,6 @@
     <ClCompile Include="Run_Draw.cpp">
       <Filter>ソース ファイル\TextureCPP</Filter>
     </ClCompile>
-    <ClCompile Include="KoKo_Draw.cpp">
-      <Filter>ソース ファイル\TextureCPP</Filter>
-    </ClCompile>
     <ClCompile Include="direct3d.cpp">
       <Filter>ソース ファイル\DirectX</Filter>
     </ClCompile>
@@ -87,9 +84,6 @@
     </ClCompile>
     <ClCompile Include="shader.cpp">
       <Filter>ソース ファイル\Setting</Filter>
-    </ClCompile>
-    <ClCompile Include="polygon.cpp">
-      <Filter>ソース ファイル\Draw</Filter>
     </ClCompile>
     <ClCompile Include="Sprite.cpp">
       <Filter>ソース ファイル\Draw</Filter>
@@ -110,9 +104,6 @@
     </ClInclude>
     <ClInclude Include="debug_text.h">
       <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="KoKo.h">
-      <Filter>ヘッダー ファイル\TextureH</Filter>
     </ClInclude>
     <ClInclude Include="Run.h">
       <Filter>ヘッダー ファイル\TextureH</Filter>
@@ -138,9 +129,6 @@
     <ClInclude Include="shader.h">
       <Filter>ヘッダー ファイル\Setting</Filter>
     </ClInclude>
-    <ClInclude Include="polygon.h">
-      <Filter>ヘッダー ファイル\Draw</Filter>
-    </ClInclude>
     <ClInclude Include="Sprite.h">
       <Filter>ヘッダー ファイル\Draw</Filter>
     </ClInclude>
@@ -161,47 +149,6 @@
     <FxCompile Include="shader_vertex_2d.hlsl">
       <Filter>Shader File</Filter>
     </FxCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="knight_new.png">
-      <Filter>リソース ファイル\Texture</Filter>
-    </Image>
-    <Image Include="Resource\Texture\knight.png">
-      <Filter>リソース ファイル\Texture</Filter>
-    </Image>
-    <Image Include="Resource\Texture\knight_more_new.png">
-      <Filter>リソース ファイル\Texture</Filter>
-    </Image>
-    <Image Include="Resource\Texture\kokosozai.png">
-      <Filter>リソース ファイル\Texture</Filter>
-    </Image>
-    <Image Include="Resource\Texture\konbini.png">
-      <Filter>リソース ファイル\Texture</Filter>
-    </Image>
-    <Image Include="Resource\Texture\pixel_ground.jpg">
-      <Filter>リソース ファイル\Texture</Filter>
-    </Image>
-    <Image Include="Resource\Texture\runningman000.png">
-      <Filter>リソース ファイル\Texture</Filter>
-    </Image>
-    <Image Include="Resource\Texture\runningman001.png">
-      <Filter>リソース ファイル\Texture</Filter>
-    </Image>
-    <Image Include="Resource\Texture\runningman002.png">
-      <Filter>リソース ファイル\Texture</Filter>
-    </Image>
-    <Image Include="Resource\Texture\runningman003.png">
-      <Filter>リソース ファイル\Texture</Filter>
-    </Image>
-    <Image Include="Resource\Texture\HAL.jpg">
-      <Filter>リソース ファイル\Texture</Filter>
-    </Image>
-    <Image Include="consolab_ascii_512.png">
-      <Filter>リソース ファイル\Texture</Filter>
-    </Image>
-    <Image Include="konbini.png">
-      <Filter>リソース ファイル\Texture</Filter>
-    </Image>
   </ItemGroup>
   <ItemGroup>
     <None Include="ascii_texture_generator.py">
@@ -227,5 +174,64 @@
     <Library Include="DirectXTex_Release.lib">
       <Filter>リソース ファイル\DirectX</Filter>
     </Library>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resource\Texture\HAL.jpg">
+      <Filter>リソース ファイル\Texture</Filter>
+    </Image>
+    <Image Include="Resource\Texture\pixel_ground.jpg">
+      <Filter>リソース ファイル\Texture</Filter>
+    </Image>
+    <Image Include="Resource\Texture\Pixel_Ground.png">
+      <Filter>リソース ファイル\Texture</Filter>
+    </Image>
+    <Image Include="Resource\Texture\Polygon_ground.png">
+      <Filter>リソース ファイル\Texture</Filter>
+    </Image>
+    <Image Include="Resource\Texture\Polygon_ground_cloud_1.png">
+      <Filter>リソース ファイル\Texture</Filter>
+    </Image>
+    <Image Include="Resource\Texture\Polygon_ground_cloud_2.png">
+      <Filter>リソース ファイル\Texture</Filter>
+    </Image>
+    <Image Include="Resource\Texture\Polygon_ground_grass.png">
+      <Filter>リソース ファイル\Texture</Filter>
+    </Image>
+    <Image Include="Resource\Texture\Polygon_ground_mountain_1.png">
+      <Filter>リソース ファイル\Texture</Filter>
+    </Image>
+    <Image Include="Resource\Texture\Polygon_ground_mountain_2.png">
+      <Filter>リソース ファイル\Texture</Filter>
+    </Image>
+    <Image Include="Resource\Texture\Polygon_ground_mountain_re_1.png">
+      <Filter>リソース ファイル\Texture</Filter>
+    </Image>
+    <Image Include="Resource\Texture\Polygon_ground_mountain_re_2.png">
+      <Filter>リソース ファイル\Texture</Filter>
+    </Image>
+    <Image Include="Resource\Texture\Polygon_ground_plus.png">
+      <Filter>リソース ファイル\Texture</Filter>
+    </Image>
+    <Image Include="Resource\Texture\runningman000.png">
+      <Filter>リソース ファイル\Texture</Filter>
+    </Image>
+    <Image Include="Resource\Texture\runningman001.png">
+      <Filter>リソース ファイル\Texture</Filter>
+    </Image>
+    <Image Include="Resource\Texture\runningman002.png">
+      <Filter>リソース ファイル\Texture</Filter>
+    </Image>
+    <Image Include="Resource\Texture\runningman003.png">
+      <Filter>リソース ファイル\Texture</Filter>
+    </Image>
+    <Image Include="Resource\Texture\w.png">
+      <Filter>リソース ファイル\Texture</Filter>
+    </Image>
+    <Image Include="Resource\Texture\Black.png">
+      <Filter>リソース ファイル\Texture</Filter>
+    </Image>
+    <Image Include="Resource\Texture\Ground_Top.png">
+      <Filter>リソース ファイル\Texture</Filter>
+    </Image>
   </ItemGroup>
 </Project>

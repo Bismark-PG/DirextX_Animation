@@ -25,9 +25,7 @@
     <ClCompile Include="direct3d.cpp" />
     <ClCompile Include="Game_Window.cpp" />
     <ClCompile Include="HAL.cpp" />
-    <ClCompile Include="KoKo_Draw.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="polygon.cpp" />
     <ClCompile Include="Run_Draw.cpp" />
     <ClCompile Include="shader.cpp" />
     <ClCompile Include="Sprite.cpp" />
@@ -44,8 +42,6 @@
     <ClInclude Include="DirectXTex.h" />
     <ClInclude Include="Game_Window.h" />
     <ClInclude Include="HAL.h" />
-    <ClInclude Include="KoKo.h" />
-    <ClInclude Include="polygon.h" />
     <ClInclude Include="Run.h" />
     <ClInclude Include="shader.h" />
     <ClInclude Include="Sprite.h" />
@@ -69,21 +65,6 @@
     </FxCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="consolab_ascii_512.png" />
-    <Image Include="knight_new.png" />
-    <Image Include="konbini.png" />
-    <Image Include="Resource\Texture\HAL.jpg" />
-    <Image Include="Resource\Texture\knight.png" />
-    <Image Include="Resource\Texture\knight_more_new.png" />
-    <Image Include="Resource\Texture\kokosozai.png" />
-    <Image Include="Resource\Texture\konbini.png" />
-    <Image Include="Resource\Texture\pixel_ground.jpg" />
-    <Image Include="Resource\Texture\runningman000.png" />
-    <Image Include="Resource\Texture\runningman001.png" />
-    <Image Include="Resource\Texture\runningman002.png" />
-    <Image Include="Resource\Texture\runningman003.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="ascii_texture_generator.py" />
     <None Include="DirectXTex.inl" />
     <None Include="DirectXTex.pdb" />
@@ -94,12 +75,34 @@
     <Library Include="DirectXTex_Debug.lib" />
     <Library Include="DirectXTex_Release.lib" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resource\Texture\Black.png" />
+    <Image Include="Resource\Texture\Ground_Top.png" />
+    <Image Include="Resource\Texture\HAL.jpg" />
+    <Image Include="Resource\Texture\pixel_ground.jpg" />
+    <Image Include="Resource\Texture\Pixel_Ground.png" />
+    <Image Include="Resource\Texture\Polygon_ground.png" />
+    <Image Include="Resource\Texture\Polygon_ground_cloud_1.png" />
+    <Image Include="Resource\Texture\Polygon_ground_cloud_2.png" />
+    <Image Include="Resource\Texture\Polygon_ground_grass.png" />
+    <Image Include="Resource\Texture\Polygon_ground_mountain_1.png" />
+    <Image Include="Resource\Texture\Polygon_ground_mountain_2.png" />
+    <Image Include="Resource\Texture\Polygon_ground_mountain_re_1.png" />
+    <Image Include="Resource\Texture\Polygon_ground_mountain_re_2.png" />
+    <Image Include="Resource\Texture\Polygon_ground_plus.png" />
+    <Image Include="Resource\Texture\runningman000.png" />
+    <Image Include="Resource\Texture\runningman001.png" />
+    <Image Include="Resource\Texture\runningman002.png" />
+    <Image Include="Resource\Texture\runningman003.png" />
+    <Image Include="Resource\Texture\w.png" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{6a5abad1-a95d-439a-a373-28de583e492f}</ProjectGuid>
     <RootNamespace>Project1</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Kadai</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -199,7 +202,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_WINDOWS;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>

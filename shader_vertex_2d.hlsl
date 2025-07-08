@@ -1,14 +1,19 @@
 /*==============================================================================
 
    2D描画用頂点シェーダー [shader_vertex_2d.hlsl]
-														 Author : Youhei Sato
-														 Date   : 2025/05/15
---------------------------------------------------------------------------------
 
 ==============================================================================*/
 
 // 定数バッファ
-float4x4 mtx;
+cbuffer VS_CONSTANT_BUFFER : register(b0)
+{
+    float4x4 Projection;
+};
+
+cbuffer VS_CONSTANT_BUFFER : register(b1)
+{
+    float4x4 World;
+};
 
 struct VS_IN
 {
@@ -31,7 +36,8 @@ VS_OUT main(VS_IN vi)
 {
     VS_OUT vo;
     
-    vo.posH = mul(vi.posL, mtx);
+    float4x4 mtx = mul(World, Projection); // Same, p
+    vo.posH = mul(vi.posL, mtx); // Change Position
     vo.color = vi.color;
     vo.UV = vi.UV;
     

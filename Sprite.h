@@ -23,14 +23,21 @@ void Sprite_Draw(int Tex_ID, float dx, float dy, float dw, float dh,
 				 const DirectX::XMFLOAT4& color = { 1.0f, 1.0f, 1.0f, 1.0f });
 
 // Cut UV
-void Sprite_Draw(int Tex_ID, float dx, float dy,
-				 int px, int py, int pw, int ph,  // Cut UV Range (Pixel Range)
+void Sprite_Draw(int Tex_ID, float dx, float dy, 
+				 // Cut UV Range (Pixel Range)
+				 int px, int py, int pw, int ph,  
 				 const DirectX::XMFLOAT4& color = { 1.0f, 1.0f, 1.0f, 1.0f });
 
 // Cut UV (Change Texture Size)
 void Sprite_Draw(int Tex_ID, float dx, float dy, float dw, float dh,
-			     int px, int py, int pw, int ph, // Cut UV Range (Pixel Range)
+				 // Cut UV Range (Pixel Range)
+			     int px, int py, int pw, int ph, 
 				 const DirectX::XMFLOAT4& color = { 1.0f, 1.0f, 1.0f, 1.0f });
+
+// Rotation
+void Sprite_Draw(int Tex_ID, float dx, float dy, float dw, float dh,
+	float px, float py, float pw, float ph, float angle = 0,
+	const DirectX::XMFLOAT4& color = { 1.0f, 1.0f, 1.0f, 1.0f });
 
 void Sprite_Draw(float dx, float dy, float dw, float dh);
 
